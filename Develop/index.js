@@ -30,7 +30,7 @@ const questions = () => {
         type: 'list',
         message: 'What license are you using?',
         name: 'license',
-        choices: ['Apache', 'MIT License', 'Unlicense', 'None']
+        choices: ['Apache', 'MIT', 'The Unlicense', 'None']
     },
     {
         type: 'input',
@@ -56,15 +56,14 @@ const questions = () => {
 };
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-    generateMarkdown();
+const writeToFile = (answers) => {
+    generateMarkdown(answers)
 }
 
 // TODO: Create a function to initialize app
 const init = () => {
     questions()
-    .then((answers) => console.log(answers))
-    .then((answers) => fs.writeFileSync('README.md', writeToFile(answers)))
+    .then((answers) => writeToFile(JSON.stringify(answers)))
     .then(() => console.log('Successfully created README file.'))
     .catch((err) => console.error(err))
 }
