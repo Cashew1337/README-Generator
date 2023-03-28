@@ -16,11 +16,11 @@ function renderLicenseBadge(license) {
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   if (license === 'MIT') {
-    return 'https://img.shields.io/badge/license-MIT-brightgreen?style=plastic'
+    return 'https://opensource.org/licenses/MIT'
   } else if (license === 'Apache') {
-    return 'https://img.shields.io/badge/license-Apache-brightgreen?style=plastic'
+    return 'https://opensource.org/licenses/Apache-2.0'
   } else if (license === 'The Unlicense') {
-    return 'https://img.shields.io/badge/license-TheUnlicense-brightgreen?style=plastic'
+    return 'http://unlicense.org/'
   } else {
     return ''
   }
@@ -36,12 +36,27 @@ function renderLicenseSection(license) {
   }
 }
 
+function renderLicenseToc(license) {
+  if (license !== null) {
+    return '[License](#license)'
+  } else {
+    return ''
+  }
+}
+
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
+${renderLicenseBadge(data.license)}
 
   ## Table of Contents
   [Description](#description)
+  [Installation](#installation)
+  [Usage](#usage)
+  ${renderLicenseToc(data.license)}
+  [Contribution](#contribution)
+  [Tests](#test)
+  [Questions](#questions)
 
 ## Description
 
@@ -57,7 +72,7 @@ ${data.usage}
 
 ${renderLicenseSection(data.license)}
 
-[${renderLicenseBadge(data.license)}](${renderLicenseLink(data.license)})
+${renderLicenseLink(data.license)}
 
 ## Contributing
 
@@ -73,7 +88,7 @@ If you have any questions, I can be contacted at the following links:
 
 [Github](https://www.github.com/${data.github})
 
-[Email](${data.email})
+[Email](mailto:${data.email})
 `
 };
 
