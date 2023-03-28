@@ -28,6 +28,10 @@ Once the code is pulled from Github, open a terminal to the repository and enter
 
 Once it is installed, simply open a terminal to the root folder containing the index.js file. Then run the following command: "node index.js" and complete the prompts.
 
+Follow the link for a video walkthrough on how to use the app:
+
+https://drive.google.com/file/d/1zBT0gh8fnWQeXvXxDxVtZQFvfB7LS8Ox/view
+
 ## License
 
 
