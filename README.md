@@ -13,6 +13,8 @@
   [Contributing](#contributing)
 
   [Tests](#tests)
+  
+  [Credits](#credits)
 
   [Questions](#questions)
 
@@ -43,6 +45,13 @@ You can contribute to the project by creating a fork of the original repository 
 ## Tests
 
 N/A
+
+## Credits
+
+I received help on the index.js file from fellow students Hailey Flora and Kevin Molyneaux.
+Some code was created based on source code found at this forum post: 
+
+https://stackoverflow.com/questions/67013842/trying-to-place-license-badge-within-readme-md-using-node-js-but-getting-error-a
 
 ## Questions
 
